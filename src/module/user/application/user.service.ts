@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { UserRepository } from "../infraestructure/user.repository";
 import { User } from "../domain/user.entity";
+import { CreateUserDto, UpdateUserDto } from "../interface/user.dto";
+import { mapRequestToEntity } from "../interface/user.mapper";
 
 @Injectable()
 export class UserService {
@@ -14,12 +16,13 @@ export class UserService {
     return await this.userRepository.findById(id);
   }
 
-  async createUser(user: User): Promise<User> {
+  async createUser(createUserDto: CreateUserDto): Promise<User> {
+    const user = mapRequestToEntity(createUserDto);
     return await this.userRepository.create(user);
   }
 
-  async updateUser(userId: number, fieldsToUpdate: Partial<User>): Promise<User> {
-    return await this.userRepository.update(userId, fieldsToUpdate);
+  async updateUser(userId: number, updateUserDto: UpdateUserDto): Promise<User> {
+    return await this.userRepository.update(userId, updateUserDto);
   }
 
   async deleteUser(userId: number): Promise<User> {
