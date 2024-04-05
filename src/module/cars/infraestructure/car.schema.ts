@@ -1,5 +1,6 @@
 import { BaseSchema } from "src/common/infraestructure/baseSchema";
 import { Car } from "../domain/car.entity";
+import { Reservation } from "src/module/reservations/domain/reservation.entity";
 
 export const CarSchema = new BaseSchema<Car>({
   name: 'Car',
@@ -48,4 +49,15 @@ export const CarSchema = new BaseSchema<Car>({
       deleteDate: true,
     },
   },
+
+  relations: {
+    reservations: {
+      type: 'one-to-many',
+      target:() => Reservation,
+      inverseSide: 'car',
+      joinColumn: {
+        name: 'car_id'
+      },
+  },
+  }
 })
