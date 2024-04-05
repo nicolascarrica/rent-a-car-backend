@@ -1,5 +1,6 @@
 import { BaseSchema } from "src/common/infraestructure/baseSchema";
 import { User } from "../domain/user.entity";
+import { Reservation } from "src/module/reservations/domain/reservation.entity";
 
 export const UserSchema = new BaseSchema<User>({
   name: 'User',
@@ -43,4 +44,14 @@ export const UserSchema = new BaseSchema<User>({
       name: 'birth_date'
     }
   },
+  relations: {
+    reservations: {
+      type: 'one-to-many',
+      target: () => Reservation,
+      inverseSide: 'user',
+      joinColumn: {
+        name: 'user_id'
+      }
+    }
+  }
 });
