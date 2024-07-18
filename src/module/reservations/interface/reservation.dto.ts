@@ -1,6 +1,6 @@
 import { PartialType } from "@nestjs/mapped-types";
 import { Type } from "class-transformer";
-import { IsBoolean, IsDateString, IsNotEmpty, IsString } from "class-validator";
+import { IsBoolean, IsDateString, IsNotEmpty, IsNumber, IsString } from "class-validator";
 import { Car } from "src/module/cars/domain/car.entity";
 import { User } from "src/module/user/domain/user.entity";
 
@@ -18,10 +18,6 @@ export class CreateReservationDto {
   pricePerDay: number;
 
   @IsNotEmpty()
-  @Type(() => Number)
-  totalPrice: number;
-
-  @IsNotEmpty()
   @IsString()
   paymentMethod: string;
 
@@ -30,12 +26,13 @@ export class CreateReservationDto {
   @Type(() => Boolean)
   statusId: boolean;
 
-  @Type(() => Car)
-  car: Car
+  @IsNotEmpty()
+  @Type(() => Number)
+  carId: number;
 
-  @Type(() => User)
-  user: User
-
+  @IsNotEmpty()
+  @Type(() => Number)
+  userId: number;
 }
 
-export class UpdateReservationDto extends PartialType(CreateReservationDto) { }
+export class UpdateReservationDto extends PartialType(CreateReservationDto) {}
