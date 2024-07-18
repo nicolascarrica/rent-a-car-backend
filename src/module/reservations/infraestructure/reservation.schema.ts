@@ -16,6 +16,10 @@ export const ReservationSchema = new BaseSchema<Reservation>({
       type: Date,
       name: 'end_date'
     },
+    totalDays: {
+      type: Number,
+      name: 'total_days'
+    },
     pricePerDay: {
       type: Number,
       name: 'price_per_day'
