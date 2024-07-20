@@ -37,18 +37,20 @@ export class CarController {
   // }
   @Post()
   @UseInterceptors(FileInterceptor('img', multerConfig))
-  createCar (
+  async createCar(
     @UploadedFile() file: Express.Multer.File,
     @Body() createCarDto: CreateCarDto
   ): Promise<Car> {
-    let path: string = '';
-
+    let imgPath: string = '';
+  
     if (file && file.path) {
-      path = file.path.split('uploads\\')[1];
+      imgPath = file.path.split('uploads/')[1]; // Ajusta según la configuración de tu Multer
     }
-
-    const newCar: Car = mapRequestToEntity(createCarDto, path);
-    return this.service.create(newCar)
+  
+    const newCar: Car = mapRequestToEntity(createCarDto, imgPath); // Asegúrate de pasar imgPath aquí
+    const createdCar = await this.service.create(newCar);
+  
+    return createdCar;
   }
 
   @Patch(':id')

@@ -1,6 +1,6 @@
 import { IntersectionType, PartialType } from "@nestjs/mapped-types";
 import { Type } from "class-transformer";
-import { IsBoolean, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CreateCarDto {
   @IsString()
@@ -32,11 +32,16 @@ export class CreateCarDto {
   @IsBoolean()
   @Type(() => Boolean)
   airConditioning: boolean;
+
+  @IsString()
+  @IsOptional()
+  img?: string;
+
 }
 
-class CarAdditionalInfo {
-  img: string;
-}
+// class CarAdditionalInfo {
+//   img: string;
+// }
 
-export class UpdateCarDto extends IntersectionType(PartialType(CreateCarDto), CarAdditionalInfo) {}
+export class UpdateCarDto extends IntersectionType(PartialType(CreateCarDto)) {}
 
