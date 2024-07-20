@@ -13,20 +13,36 @@ export class ReservationRepository implements IReservationRepository{
   ){}
 
   async findAll(): Promise<Reservation[]> {
-    const reservations = await this.repository.find();
-    return reservations;
+    return this.repository.createQueryBuilder('reservation')
+      .leftJoinAndSelect('reservation.car', 'car')
+      .leftJoinAndSelect('reservation.user', 'user')
+      .getMany();
   }
 
   async findById(id: number): Promise<Reservation> {
-    const reservation = await this.repository.findOne({
-      where: {
-        id
-      }
-    });
-
-    if(!reservation) throw new NotFoundException(`Reservation with id ${id} not found`);
-    return reservation;
+    return this.repository.createQueryBuilder('reservation')
+      .leftJoinAndSelect('reservation.car', 'car')
+      .leftJoinAndSelect('reservation.user', 'user')
+      .where('reservation.id = :id', { id })
+      .getOne();
   }
+
+  
+  // async findAll(): Promise<Reservation[]> {
+  //   const reservations = await this.repository.find();
+  //   return reservations;
+  // }
+
+  // async findById(id: number): Promise<Reservation> {
+  //   const reservation = await this.repository.findOne({
+  //     where: {
+  //       id
+  //     }
+  //   });
+
+  //   if(!reservation) throw new NotFoundException(`Reservation with id ${id} not found`);
+  //   return reservation;
+  // }
 
   async create(newReservation: Reservation): Promise<Reservation> {
     return await this.repository.save(newReservation);

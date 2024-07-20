@@ -8,11 +8,11 @@ export class ReservationMapper {
     const reservation = new Reservation();
     reservation.startDate = dto.startDate;
     reservation.endDate = dto.endDate;
-    reservation.pricePerDay = dto.pricePerDay;
+    reservation.pricePerDay = car.price;
     reservation.paymentMethod = dto.paymentMethod;
     reservation.statusId = dto.statusId;
     reservation.totalDays = this.calculateTotalDays(dto.startDate, dto.endDate);
-    reservation.totalPrice = reservation.totalDays * dto.pricePerDay;
+    reservation.totalPrice = reservation.totalDays * car.price;
     reservation.car = car;
     reservation.user = user;
     return reservation;
@@ -21,11 +21,11 @@ export class ReservationMapper {
   mapUpdateDtoToEntity(dto: UpdateReservationDto, car: Car, user: User, existingReservation: Reservation): Reservation {
     existingReservation.startDate = dto.startDate;
     existingReservation.endDate = dto.endDate;
-    existingReservation.pricePerDay = dto.pricePerDay;
+    existingReservation.pricePerDay = car.price;
     existingReservation.paymentMethod = dto.paymentMethod;
     existingReservation.statusId = dto.statusId;
     existingReservation.totalDays = this.calculateTotalDays(dto.startDate, dto.endDate);
-    existingReservation.totalPrice = existingReservation.totalDays * dto.pricePerDay;
+    existingReservation.totalPrice = existingReservation.totalDays * car.price;
     existingReservation.car = car;
     existingReservation.user = user;
     return existingReservation;

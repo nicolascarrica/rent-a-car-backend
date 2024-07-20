@@ -33,7 +33,7 @@ export const ReservationSchema = new BaseSchema<Reservation>({
        name: 'payment_method'
     },
     statusId: {
-      type: Boolean,
+      type: String,
       name: 'status'
     },
   },
