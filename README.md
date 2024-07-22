@@ -1,6 +1,16 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Rent-A-Car Backend
+
+## Description
+
+This is the backend of a Rent-A-Car application developed with NestJS. The application allows users to manage car reservations, including creating, updating, and deleting reservations. The backend connects to a database and provides a RESTful API for interacting with the data.
+
+## Technologies Used
+
+- [NestJS](https://nestjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TypeORM](https://typeorm.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+
 
 ## Description
 
