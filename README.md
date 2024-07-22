@@ -34,7 +34,8 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
     npm run start
     ```
 
-
+## Images
+![image](https://github.com/user-attachments/assets/f566f319-b87c-427c-937d-102f33373385)
 
 ## Support
 
