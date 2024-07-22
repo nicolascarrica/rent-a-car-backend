@@ -9,12 +9,8 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
 - [NestJS](https://nestjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TypeORM](https://typeorm.io/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [SQLite](https://www.sqlite.org/)
 
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
