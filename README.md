@@ -14,6 +14,35 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
 
 ## Installation
 
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/rent-a-car-backend.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd rent-a-car-backend
+    ```
+
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+4. Configure environment variables. Create a `.env` file in the root of the project and add the following variables:
+    ```env
+    DATABASE_HOST=localhost
+    DATABASE_PORT=5432
+    DATABASE_USER=your-username
+    DATABASE_PASSWORD=your-password
+    DATABASE_NAME=rentacar
+    ```
+
+5. Start the application:
+    ```bash
+    npm run start:dev
+    ```
+
 ```bash
 $ npm install
 ```
