@@ -16,7 +16,7 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/rent-a-car-backend.git
+    git clone [https://github.com/nicolascarrica/rent-a-car-backend.git]
     ```
 
 2. Navigate to the project directory:
@@ -29,49 +29,12 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
     npm install
     ```
 
-4. Configure environment variables. Create a `.env` file in the root of the project and add the following variables:
-    ```env
-    DATABASE_HOST=localhost
-    DATABASE_PORT=5432
-    DATABASE_USER=your-username
-    DATABASE_PASSWORD=your-password
-    DATABASE_NAME=rentacar
-    ```
-
-5. Start the application:
+4. Start the application:
     ```bash
-    npm run start:dev
+    npm run start
     ```
 
-```bash
-$ npm install
-```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
 
@@ -79,10 +42,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Carrica Nicolas](https://www.linkedin.com/in/nicol%C3%A1s-carrica-28a7751a1/)
+- Twitter - [@nicocarri23](https://twitter.com/nicocarri23)
 
-## License
-
-Nest is [MIT licensed](LICENSE).
