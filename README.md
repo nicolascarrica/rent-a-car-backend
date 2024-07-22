@@ -41,7 +41,7 @@ This is the backend of a Rent-A-Car application developed with NestJS. The appli
 
 ## Frontend
 
-To view the frontend part of this application, please visit [this repository](https://github.com/nicolascarrica/rent-a-car-frontend).
+To view the frontend part of this application, please visit [this repository](https://github.com/nicolascarrica/rent-a-car-front).
 
 This link will take you to the frontend repository where you can find the client-side code and instructions on how to run the frontend application.
 
