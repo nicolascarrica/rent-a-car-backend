@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import { ReservationService } from "../application/reservation.service";
 import { Reservation } from "../domain/reservation.entity";
-import { CreateReservationDto } from "./reservation.dto";
+import { CreateReservationDto, UpdateReservationDto } from "./reservation.dto";
 
 @Controller("reservations")
 export class ReservationController {
@@ -35,7 +35,7 @@ export class ReservationController {
   updateReservation(
     @Param("id")
     id: number,
-    @Body() updateReservationDto: CreateReservationDto
+    @Body() updateReservationDto: UpdateReservationDto
   ) {
     const updatedReservation = this.service.update(id, updateReservationDto);
     return updatedReservation
